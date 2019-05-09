@@ -73,3 +73,11 @@ input:focus {
 [data-slate-editor] > * + * {
   margin-top: 1em;
 }
+
+#preview p {
+  padding-top: 20px;
+}
+
+#preview img {
+  padding-top: 20px;
+}

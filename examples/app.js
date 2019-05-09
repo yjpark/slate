@@ -35,6 +35,7 @@ import SyncingOperations from './syncing-operations'
 import Tables from './tables'
 import Mentions from './mentions'
 import Placeholder from './placeholder'
+import PImgHtml from './p-img-html'
 
 /**
  * Examples.
@@ -69,6 +70,7 @@ const EXAMPLES = [
   ['Syncing Operations', SyncingOperations, '/syncing-operations'],
   ['Tables', Tables, '/tables'],
   ['Versions', Versions, '/versions'],
+  ['PImgHtml', PImgHtml, '/p-img-html'],
 ]
 
 /**
@@ -159,7 +161,6 @@ const Tab = styled(MaskedRouterLink)`
 `
 
 const Wrapper = styled('div')`
-  max-width: 42em;
   margin: 20px auto;
   padding: 20px;
 `
@@ -267,7 +268,7 @@ export default class App extends React.Component {
         {EXAMPLES.map(([name, Component, path]) => (
           <Route key={path} path={path}>
             {({ match }) => (
-              <div>
+              <div style={{ width: '100%' }} >
                 <ExampleContent>
                   <Component params={match.params} />
                 </ExampleContent>
@@ -275,7 +276,7 @@ export default class App extends React.Component {
             )}
           </Route>
         ))}
-        <Redirect from="/" to="/rich-text" />
+        <Redirect from="/" to="/p-img-html" />
       </Switch>
     )
   }
